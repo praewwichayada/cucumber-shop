@@ -10,10 +10,16 @@ public class OrderItem {
 
         this.prod = prod;
         this.quantity = quantity;
+
+        setProductAvailability();
     }
 
     public double getSubtotal() {
         return prod.getPrice() * quantity;
+    }
+    public void setProductAvailability() {
+        int q = prod.getQuantity() - quantity;
+        this.prod.setQuantity(q);
     }
 
 }
